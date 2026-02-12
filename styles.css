@@ -1,49 +1,40 @@
 #playing-cards {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 40px;                /* bigger gap looks better */
+  gap: 30px;
   padding: 40px;
+  background: #004d00;       /* dark green table */
   min-height: 100vh;
-  background: #0a3d2e;       /* dark green felt table look */
 }
 
 .card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 140px;          /* ← important */
-  height: 200px;         /* ← important — classic card shape */
+  width: 140px;
+  height: 200px;
   background: white;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 8px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 10px;
   box-sizing: border-box;
-}
-
-.card.red {                  /* add class="red" to red-suit cards in HTML */
-  color: red;
+  display: flex;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  position: relative;
 }
 
 .left, .right {
-  font-size: 28px;
-  line-height: 1.1;
+  align-self: flex-start;
 }
 
 .right {
-  transform: rotate(180deg); /* flips bottom-right corner like real cards */
-  text-align: right;
+  align-self: flex-end;
+  transform: rotate(180deg);   /* classic — bottom number upside-down */
 }
 
 .middle {
-  .middle {
-  display: flex;
   align-self: center;
-
-  align-items: center;       
-  justify-content: center;   
-  font-size: 2rem;           
-}
+  font-size: 3rem;             /* big central symbol */
+  color: red;                  /* temporary — change per suit later */
 }
