@@ -1,27 +1,51 @@
-#playing-cards{
+#playing-cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-}
-.card{
-  display: flex;
-  flex-direction: row;
-justify-content:space-between;
-  width:50px;
-  height: 50px;
+  gap: 40px;                /* bigger gap looks better */
+  padding: 40px;
+  min-height: 100vh;
+  background: #0a3d2e;       /* dark green felt table look */
 }
 
-.left{
-align-self:flex-start;
+.card {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;              /* much more usable size */
+  height: 240px;             /* classic card ratio ~1:1.4–1.5 */
+  background: white;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: black;              /* default; override per suit later */
+  position: relative;
 }
-.middle{
-  display:flex;
- align-self:center;
- flex-direction:column;
+
+.card.red {                  /* add class="red" to red-suit cards in HTML */
+  color: red;
 }
-.right{
-  align-self:flex-end;
+
+.left, .right {
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.right {
+  transform: rotate(180deg); /* flips bottom-right corner like real cards */
+  text-align: right;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centers vertically */
+  align-items: center;       /* centers horizontally */
+  font-size: 48px;           /* big suit symbols */
+  flex-grow: 1;
+  line-height: 0.9;
 }
