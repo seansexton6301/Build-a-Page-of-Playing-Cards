@@ -1,40 +1,48 @@
 #playing-cards {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 30px;
   padding: 40px;
-  background: #004d00;       /* dark green table */
+  background: #0b4d00;   /* dark green "table" feel – helps see white cards */
   min-height: 100vh;
 }
 
 .card {
-  width: 140px;
-  height: 200px;
+  width: 160px;
+  height: 220px;
   background: white;
-  border: 2px solid #000;
+  border: 2px solid black;
   border-radius: 12px;
   padding: 10px;
   box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  font-family: Arial, sans-serif;
+  
+  display: flex;                  /* must have this */
+  flex-direction: row;            /* side-by-side */
+  justify-content: space-between; /* pushes left & right to edges */
+}
+
+.left {
+  align-self: flex-start;   /* sticks to top */
+  font-size: 28px;
   font-weight: bold;
-  font-size: 1.4rem;
-  position: relative;
-}
-
-.left, .right {
-  align-self: flex-start;
-}
-
-.right {
-  align-self: flex-end;
-  transform: rotate(180deg);   /* classic — bottom number upside-down */
+  line-height: 1;
 }
 
 .middle {
-  align-self: center;
-  font-size: 3rem;             /* big central symbol */
-  color: red;                  /* temporary — change per suit later */
+  align-self: center;       /* vertical center */
+  font-size: 40px;          /* big suit symbols */
+  color: red;               /* temporary – override for spades/clubs later */
+  text-align: center;
+  /* IMPORTANT: NO flex-direction: column here unless you add more structure later */
+}
+
+.right {
+  align-self: flex-end;     /* sticks to bottom */
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+  transform: rotate(180deg); /* makes bottom rank/suit right-side-up when rotated */
 }
