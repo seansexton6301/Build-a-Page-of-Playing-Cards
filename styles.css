@@ -1,48 +1,70 @@
+/* styles.css */
+
 #playing-cards {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 30px;
-  padding: 40px;
-  background: #0b4d00;   /* dark green "table" feel – helps see white cards */
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
   min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c2f, #0f2319);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card {
-  width: 160px;
-  height: 220px;
-  background: white;
-  border: 2px solid black;
-  border-radius: 12px;
-  padding: 10px;
+  width: 140px;
+  height: 200px;
+  background: #fff;
+  border: 1px solid #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  padding: 8px;
   box-sizing: border-box;
-  
-  display: flex;                  /* must have this */
-  flex-direction: row;            /* side-by-side */
-  justify-content: space-between; /* pushes left & right to edges */
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .left {
-  align-self: flex-start;   /* sticks to top */
-  font-size: 28px;
+  align-self: flex-start;
+  font-size: 24px;
   font-weight: bold;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .middle {
-  align-self: center;       /* vertical center */
-  font-size: 40px;          /* big suit symbols */
-  color: red;               /* temporary – override for spades/clubs later */
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 36px;
+  line-height: 0.95;
   text-align: center;
-  /* IMPORTANT: NO flex-direction: column here unless you add more structure later */
+  letter-spacing: -2px;
 }
 
 .right {
-  align-self: flex-end;     /* sticks to bottom */
-  font-size: 28px;
+  align-self: flex-end;
+  font-size: 24px;
   font-weight: bold;
-  line-height: 1;
-  transform: rotate(180deg); /* makes bottom rank/suit right-side-up when rotated */
+  line-height: 1.1;
+  transform: rotate(180deg);
+}
+
+/* Color the suits properly */
+.card:nth-child(1) .left,
+.card:nth-child(1) .middle,
+.card:nth-child(1) .right {
+  color: black;
+}
+
+.card:nth-child(2) .left,
+.card:nth-child(2) .middle,
+.card:nth-child(2) .right {
+  color: #c41e3a; /* vivid red */
+}
+
+.card:nth-child(3) .left,
+.card:nth-child(3) .middle,
+.card:nth-child(3) .right {
+  color: #d62839; /* slightly brighter diamond red */
 }
